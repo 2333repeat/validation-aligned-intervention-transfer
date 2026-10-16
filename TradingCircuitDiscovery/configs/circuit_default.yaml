@@ -1,0 +1,57 @@
+model:
+  type: PPO
+  checkpoint:
+    path: ./Policy-Value/result/PPO-SP500-with-short/agent/model/best_model.pth
+  adapter:
+    ppo_class: Policy-Value.agents.PPOAgent.PPO
+    dqn_class: Policy-Value.agents.DQNagent.DDQN
+
+dataset:
+  market: SP500
+  timeframe: 1d
+  data_path: ./Policy-Value/Data/SP500.csv
+  train_start: "2012-01-01"
+  train_end: "2021-12-31"
+  test_start: "2022-01-01"
+  test_end: "2024-12-31"
+  window_size: 20
+
+activation:
+  layers:
+    - actor.fc1
+    - actor.fc2
+    - critic.fc1
+    - policy_net.fc1
+    - policy_net.fc2
+  flatten: true
+  output_dir: ./activation_bank
+
+concept:
+  regimes:
+    - trend
+    - volatility
+    - sideway
+  lookback: 20
+  threshold_quantile: 0.7
+
+intervention:
+  method: activation_patch
+  baseline: 0.0
+
+sae:
+  enabled: true
+  latent_dim: 4096
+  l1_lambda: 0.001
+
+evaluation:
+  metrics:
+    - pnl
+    - sharpe
+    - mdd
+    - turnover
+    - causal_effect
+    - sparsity
+    - stability
+
+output:
+  dir: ./TradingCircuitDiscovery/outputs/default

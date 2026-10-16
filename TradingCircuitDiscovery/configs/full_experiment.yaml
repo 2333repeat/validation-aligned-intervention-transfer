@@ -1,0 +1,17 @@
+concepts:
+  - trend
+  - high_volatility
+  - sideway
+  - long_action
+  - short_action
+  - risk_off
+lookback: 20
+threshold_quantile: 0.7
+top_candidates: 8
+max_circuit_size: 4
+random_controls: 50
+sae_expansion_factors: [2, 4, 8]
+sae_epochs: 60
+sae_patience: 8
+sae_l1_lambda: 0.001
+device: cuda

@@ -1,0 +1,23 @@
+# PPO 超参数（Policy-Value）
+# 说明：这里的维度需要与 TradingEnv 产出的状态一致：state_dim = input_size * window_size
+
+input_size: 7         # 特征数（Open/High/Low/Close/Volume/MA_5/MA_10）
+window_size: 20       # 状态窗口长度（天）
+hidden_dim: 64        # actor/critic 隐藏层维度
+action_dim: 3         # 0: hold, 1: buy/open long, 2: sell/open short
+
+actor_lr: 0.0001      # actor 学习率
+critic_lr: 0.001      # critic 学习率
+device: auto
+
+gamma: 0.99           # 折扣因子
+lmbda: 0.95           # GAE 参数
+epochs: 10            # PPO 每次更新轮次
+eps: 0.2              # PPO clip 范围
+entropy_coef: 0.01
+rollout_steps: 1024
+mini_batch_size: 256
+max_grad_norm: 0.5
+
+num_episodes: 60
+test_interval: 10

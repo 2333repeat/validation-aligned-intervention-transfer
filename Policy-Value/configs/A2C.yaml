@@ -1,0 +1,17 @@
+# A2C 超参数（Policy-Value）
+input_size: 7
+window_size: 20
+hidden_dim: 64
+action_dim: 3
+device: auto
+
+actor_lr: 0.0007
+critic_lr: 0.0007
+gamma: 0.99
+n_steps: 20
+entropy_coef: 0.01
+value_coef: 0.5
+max_grad_norm: 0.5
+
+num_episodes: 60
+test_interval: 10

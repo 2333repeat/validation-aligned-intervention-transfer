@@ -1,0 +1,22 @@
+# DDQN 超参数（Policy-Value）
+# 说明：这里的维度需要与 TradingEnv 产出的状态一致：state_dim = input_size * window_size
+
+input_size: 7
+window_size: 20
+hidden_dim: 64
+action_dim: 3
+device: auto
+
+gamma: 0.99
+lr: 0.0001
+target_update: 1000
+tau: 0.005
+max_grad_norm: 1.0
+
+num_episodes: 60
+test_interval: 10
+
+EPS_START: 1.0
+EPS_END: 0.05
+EPS_DECAY: 2000
+learning_starts: 2000

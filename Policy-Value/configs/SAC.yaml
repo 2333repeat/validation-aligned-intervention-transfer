@@ -1,0 +1,19 @@
+# Discrete SAC 超参数（Policy-Value）
+input_size: 7
+window_size: 20
+hidden_dim: 128
+action_dim: 3
+device: auto
+
+actor_lr: 0.0003
+critic_lr: 0.0003
+alpha_lr: 0.0003
+alpha_mode: auto
+alpha: 0.2
+target_entropy_scale: 0.7
+gamma: 0.99
+tau: 0.005
+max_grad_norm: 1.0
+
+num_episodes: 60
+test_interval: 10

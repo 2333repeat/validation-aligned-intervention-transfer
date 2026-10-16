@@ -1,0 +1,44 @@
+concepts:
+  - trend
+  - high_volatility
+  - sideway
+  - long_action
+  - short_action
+  - risk_off
+primary_concepts:
+  - trend
+  - high_volatility
+action_derived_concepts:
+  - long_action
+  - short_action
+  - risk_off
+top_candidates: 16
+circuit_sizes: [2, 4, 8]
+min_relative_gains: [0.0, 0.01, 0.05]
+near_max_fraction: 0.95
+random_controls: 50
+intervention_modes:
+  - discovery_mean
+  - zero
+  - opposite_class
+  - matched_noise
+attribution_methods:
+  - activation_difference
+  - probe_weight
+  - activation_magnitude
+  - gradient_x_activation
+  - integrated_gradients
+integrated_gradient_steps: 8
+bootstrap_repeats: 20
+bootstrap_block_size: 20
+sae_expansion_factors: [2, 4, 8]
+sae_l1_lambdas: [0.001, 0.01, 0.05]
+sae_topk_values: [4, 8, 16, 32]
+sae_epochs: 40
+sae_patience: 6
+sae_ev_tolerance: 0.02
+transaction_costs: [0.0, 0.001, 0.003, 0.005, 0.01]
+economic_bootstrap_repeats: 1000
+economic_block_size: 20
+device: cuda
+

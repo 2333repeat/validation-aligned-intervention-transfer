@@ -1,0 +1,1 @@
+"""No-lookahead concept labelers."""

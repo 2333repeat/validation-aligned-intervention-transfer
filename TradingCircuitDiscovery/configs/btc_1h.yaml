@@ -1,0 +1,49 @@
+model:
+  type: PPO
+  checkpoint:
+    path: ./checkpoints/btc_ppo_best.pt
+
+dataset:
+  market: BTC
+  timeframe: 1h
+  data_path: ./data/BTC_1h.csv
+  train_start: "2021-01-01"
+  train_end: "2023-12-31"
+  test_start: "2024-01-01"
+  test_end: "2025-12-31"
+  window_size: 48
+
+activation:
+  layers:
+    - price_encoder
+    - microstructure_encoder
+    - fusion_layer
+    - policy_head
+
+concept:
+  regimes:
+    - trend
+    - volatility
+    - liquidity
+  lookback: 48
+  threshold_quantile: 0.7
+
+intervention:
+  method: activation_patch
+  baseline: 0.0
+
+sae:
+  enabled: true
+  latent_dim: 4096
+  l1_lambda: 0.001
+
+evaluation:
+  metrics:
+    - pnl
+    - sharpe
+    - mdd
+    - turnover
+    - causal_effect
+
+output:
+  dir: ./TradingCircuitDiscovery/outputs/btc_1h

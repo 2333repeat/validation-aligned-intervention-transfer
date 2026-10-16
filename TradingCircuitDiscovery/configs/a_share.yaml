@@ -1,0 +1,47 @@
+model:
+  type: DQN
+  checkpoint:
+    path: ./checkpoints/a_share_dqn_best.pt
+
+dataset:
+  market: A_SHARE
+  timeframe: 1d
+  data_path: ./data/a_share.csv
+  train_start: "2015-01-01"
+  train_end: "2021-12-31"
+  test_start: "2022-01-01"
+  test_end: "2025-12-31"
+  window_size: 20
+
+activation:
+  layers:
+    - policy_net.fc1
+    - policy_net.fc2
+
+concept:
+  regimes:
+    - trend
+    - volatility
+    - liquidity
+  lookback: 20
+  threshold_quantile: 0.7
+
+intervention:
+  method: neuron_ablation
+  baseline: 0.0
+
+sae:
+  enabled: true
+  latent_dim: 2048
+  l1_lambda: 0.001
+
+evaluation:
+  metrics:
+    - pnl
+    - sharpe
+    - mdd
+    - turnover
+    - causal_effect
+
+output:
+  dir: ./TradingCircuitDiscovery/outputs/a_share
