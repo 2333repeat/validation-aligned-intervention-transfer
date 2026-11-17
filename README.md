@@ -1,131 +1,89 @@
 # Validation-Aligned Intervention Transfer
 
-Source code and daily market data for **Validation-Aligned Intervention Transfer: Auditing Explanation Portability in Financial Reinforcement Learning**.
+Code and reproducibility artifacts for **Validation-Aligned Intervention Transfer: Auditing Explanation Portability in Financial Reinforcement Learning**.
 
-Validation-Aligned Intervention Transfer (VAIT) evaluates whether an intervention on a compact hidden-unit subset transfers between independently trained financial reinforcement learning policies. It learns unit correspondences from validation-period activations, transfers subset membership, and replaces selected activations with target-policy discovery means. Later observations test both intervention sensitivity and correspondence with a subset selected directly in the target policy.
+VAIT tests whether a compact hidden-unit intervention transfers between independently trained financial reinforcement learning policies. A validation-fitted correspondence transfers subset membership; intervention values are recomputed from the target policy's discovery observations. Evaluation separates intervention strength from correspondence to a subset selected independently in the target.
 
-## Repository structure
+## Current experiment: 600 frozen policies
 
-| Path | Contents |
-| --- | --- |
-| `Policy-Value/` | PPO, A2C, DDQN, and discrete SAC agents, training, and trading environment |
-| `Policy-Value/Data/` | Daily market CSV files for 15 equities and indices |
-| `TradingCircuitDiscovery/` | Activation collection, subset discovery, alignment, interventions, and evaluation |
-| `TradingCircuitDiscovery/configs/` | Discovery and supplementary-analysis settings |
-| `TradingCircuitDiscovery/experiments/` | Experiment runners and statistical aggregation |
-
-## Installation
-
-Use Python 3.10 or later. The code has been checked with Python 3.12. From the repository root, install the package and its dependencies:
-
-```bash
-python -m pip install -e .
-```
-
-Dependencies are also listed in `requirements.txt`. Full-matrix execution uses an NVIDIA GPU, a CUDA-enabled PyTorch installation, and `nvidia-smi` available on the command path. Individual policy training also accepts `--device cpu`. Start from the repository root; multiline examples use Bash syntax.
-
-## Data and audit periods
-
-Market files are stored as `Policy-Value/Data/<market>.csv`:
-
-```text
-AAPL  AMD   AMZN  DJI   FCHI
-GE    GOOGL HSI   INTC  IXIC
-KS11  MSFT  N225  NVDA  SP500
-```
-
-The daily Yahoo Finance data contain `Date`, `Open`, `High`, `Low`, `Close`, and `Volume`. `SP500.csv` additionally contains `Adj Close`. File date ranges vary; each run selects its configured date window.
+The current release uses four algorithms (A2C, PPO, DDQN, discrete SAC), 15 markets, and ten seeds per condition. It reuses terminal checkpoints trained for 200,000 steps through 2022. It does not select checkpoints by 2025 or 2026 returns.
 
 | Period | Role |
 | --- | --- |
-| 2012–2021 | Policy training |
-| 2022 | Concept probes, neuron ranking, and replacement means |
-| 2023 | Layer and subset selection; source–target alignment |
-| 2024 | Intervention-response evaluation |
+| 2012–2022 | Archived policy training |
+| 2023 | Concept discovery, candidate ranking, replacement means |
+| 2024 | Layer/subset selection and source–target alignment |
+| 2025 | First evaluation period |
+| January–October 2026 | Second evaluation period; last observation 30 October |
 
-The policies use rolling 20-day observations with seven features: OHLCV and 5- and 10-day moving averages. VAIT estimates subsets and mappings from the 2022–2023 observations and evaluates their intervention responses on the 2024 observations.
+This extension is retrospective. Subsets and maps were frozen before evaluation inference; the historical outcomes already existed. Both periods reuse the same policies and maps.
 
-The training entry point evaluates checkpoints over 2022–2024 by default and saves the checkpoint with the best PnL. The 2024 audit period is held out from subset and mapping selection; it overlaps this default checkpoint-evaluation window.
+## Install and obtain the frozen artifact
 
-## Train policies
-
-Train one PPO policy on HSI:
-
-```bash
-cd Policy-Value
-python train_cli.py \
-  --algorithm PPO --dataset HSI --seed 1 --device cuda \
-  --total-env-steps 200000 --eval-every-steps 10000 --random-reset
-cd ..
-```
-
-To train the complete matrix of four algorithms, 15 markets, and three seeds:
+Python 3.12 is the tested environment (Python 3.11 or later is required by the release tools). The current audit runs on CPU; a GPU is not required to replay the frozen models.
 
 ```bash
-bash Policy-Value/scripts/run_baselines.sh \
-  --markets AAPL,AMD,AMZN,DJI,FCHI,GE,GOOGL,HSI,INTC,IXIC,KS11,MSFT,N225,NVDA,SP500 \
-  --algos PPO,DDQN,A2C,SAC --seeds 1,2,3 \
-  --device cuda --workers 1 --steps 200000 --eval-every 10000 --no-tmux
+python -m pip install -e ".[test]"
+python tools/fetch_vait_artifact.py
+python tools/replay_vait_recent_snapshot.py --verify-only
 ```
 
-Training writes checkpoints and account files under `Policy-Value/result/`. The matrix runners use the `ALGORITHM-MARKET-cuda-sSEED` naming convention produced by this batch command. Complete all 180 training runs before starting the matrix audit.
+The download script retrieves the versioned [600-policy artifact](https://github.com/2333repeat/validation-aligned-intervention-transfer/releases/tag/v0.2.0-vait600), verifies its SHA-256 against [release.json](evidence/vait600/release.json), and extracts it to `artifacts/vait600/`. It includes the 600 checkpoints, their policy implementation, fixed inputs, discovery/selection/mapping records, row-level results, and aggregate tables. Per-file checksums are in `MANIFEST.json` inside the artifact.
 
-## Run the VAIT audit
+An existing `artifacts/vait600/` is preserved. To use an artifact stored elsewhere, pass `--artifact-root /path/to/vait600` to the replay script.
 
-The following stages use the trained checkpoints in order.
+## Replay the experiment
 
-### 1. Collect activations and discover subsets
+From the repository root:
 
 ```bash
-python -m TradingCircuitDiscovery.experiments.run_full_matrix \
-  --project-root Policy-Value \
-  --output-root outputs/discovery \
-  --config TradingCircuitDiscovery/configs/full_experiment.yaml \
-  --resume
+python tools/replay_vait_recent_snapshot.py --workers 2
 ```
 
-### 2. Select compact subsets and run supplementary analyses
+This runs preparation, discovery and alignment, evaluation, then 20,000 bootstrap resamples per endpoint. It uses the frozen market snapshots without fetching prices and writes to `replay_output/`, preserving the published snapshot. Full replay performs the complete 600-policy audit; it is not an instant demonstration.
+
+To check input preparation without running the full audit:
 
 ```bash
-python -m TradingCircuitDiscovery.experiments.run_supplement_matrix \
-  --project-root Policy-Value \
-  --base-output-root outputs/discovery \
-  --output-root outputs/supplement \
-  --config TradingCircuitDiscovery/configs/supplement_experiment.yaml \
-  --resume
+python tools/replay_vait_recent_snapshot.py --prepare-only --output replay_preparation
 ```
 
-### 3. Transfer interventions between policies
+Compare the completed `replay_output/aggregate/facts.json` and CSV tables with `artifacts/vait600/snapshot/aggregate/`. Numerical-library versions and degenerate assignment ties may cause floating-point differences. Exact package versions used for the original run are recorded in [requirements-observed.txt](requirements-observed.txt); its CUDA-specific PyTorch build is provenance, not a requirement for CPU inference.
+
+The public configuration is [vait_600_recent_20261117.json](TradingCircuitDiscovery/configs/vait_600_recent_20261117.json). `VAIT_RECENT_CONFIG` can select an alternative configuration file. The replay wrapper resolves artifact paths and writes a separate configuration for the new run. The preparation module's direct entry point can download data when no snapshot exists; use the replay wrapper for reproduction from the published snapshots.
+
+## Results and interpretation
+
+Each evaluation period has 32,400 nominal directed concept transfers, 28,042 eligible transfers, and 22,760 primary transfers after excluding the complementary sideways label. Eight mappings produce 448,672 eligible method evaluations across both periods; these are dependent records, not independent samples.
+
+| Primary map minus same-index | Mean sensitivity difference | 95% multiway bootstrap interval |
+| --- | ---: | --- |
+| 2025 | 0.035735 | [0.031417, 0.040154] |
+| 2026 January–October | 0.037633 | [0.033152, 0.042051] |
+
+Four of six response-correspondence endpoints improve under the reported approximate bootstrap analysis. Both Jensen–Shannon-divergence contrasts have intervals spanning zero. Stronger sensitivity can accompany poorer distributional correspondence, supporting partial response portability in this policy matrix.
+
+The [evidence directory](evidence/vait600/) contains aggregate estimates, uncertainty intervals, eligibility counts, and model/data manifests. The artifact contains the row-level results. Missing response values are omitted from their paired endpoint, never replaced with zero. Conditional action-redirection agreement uses 22,610 records in 2025 and 22,577 in 2026. BH adjustments are grouped jointly across years within the documented families; their formal calibration under the complete dependence structure has not been demonstrated.
+
+The audit measures commands and normalized output scores. DDQN uses unit-temperature softmax Q scores, not calibrated trading probabilities; commands are not position transitions. Financial diagnostics include weak policies and 13 nonpositive-equity replay paths in 2026 and do not establish investment gains from explanation transfer.
+
+## Implementation and checks
+
+| File | Role |
+| --- | --- |
+| `experiments/prepare_vait_recent.py` | Checkpoint manifests and chronological observation caches |
+| `experiments/vait_recent_core.py` | Batched interventions, selection and eight correspondence rules |
+| `experiments/run_vait_recent.py` | Discovery, alignment and global freeze |
+| `experiments/evaluate_vait_recent.py` | Evaluation on frozen choices and shared observations |
+| `experiments/aggregate_vait_recent.py` | Hierarchical estimates, resampling and BH families |
+| `evaluation/dependence_bootstrap.py` | Market-first, reciprocal-dyad and multiway resampling |
+
+Paths in this table are relative to `TradingCircuitDiscovery/`. With the artifact extracted, run:
 
 ```bash
-python -m TradingCircuitDiscovery.experiments.run_transfer_matrix \
-  --project-root Policy-Value \
-  --base-output-root outputs/discovery \
-  --supplement-output-root outputs/supplement \
-  --output-root outputs/transfer \
-  --random-controls 50 --resume
+python -m pytest TradingCircuitDiscovery/tests/test_vait_recent.py -q
 ```
 
-The transfer runner evaluates eight mapping rules: absolute- and signed-correlation Hungarian matching, Procrustes, CCA, optimal transport, weight matching, ridge mapping, and identity. Comparisons use same-index subsets, size-matched random subsets, and subsets selected directly in the target policy.
+These checks cover original-adapter equivalence for all four algorithms, metrics and mapping projection, accounting, temporal input isolation and rejection of modified frozen inputs. The public artifact relocates machine-specific metadata and updates the dependent metadata hashes; [PACKAGING.json](evidence/vait600/PACKAGING.json) records the original and distributed digests. Scientific configuration, weights, observations, selections, mappings and numerical CSV results are preserved.
 
-### 4. Aggregate results
-
-```bash
-python -m TradingCircuitDiscovery.experiments.aggregate_paper_validity \
-  --supplement-output-root outputs/supplement \
-  --transfer-output-root outputs/transfer \
-  --manifest outputs/discovery/manifest.json \
-  --output-root outputs/summary \
-  --bootstrap-repeats 20000
-```
-
-Outputs contain per-policy records, transfer responses, aggregate tables, and statistical summaries. `--resume` continues the matrix stages using their completed-run records. Training and analysis outputs are excluded from Git by `.gitignore`.
-
-## Main implementation files
-
-- [Policy training](Policy-Value/train_cli.py)
-- [Subset discovery](TradingCircuitDiscovery/discovery/circuit_search.py)
-- [Alignment methods](TradingCircuitDiscovery/evaluation/alignment_methods.py)
-- [Target-policy interventions](TradingCircuitDiscovery/experiments/run_transfer_checkpoint.py)
-- [Dependence-aware inference](TradingCircuitDiscovery/evaluation/dependence_bootstrap.py)
-- [Result aggregation](TradingCircuitDiscovery/experiments/aggregate_paper_validity.py)
+Market data originate from Yahoo Finance; retrieval provenance and snapshot hashes are retained. Third-party data keep their source terms. The [legacy 180-policy instructions](docs/legacy_180_policy.md) document the earlier 2024 experiment and are not the protocol for this release.

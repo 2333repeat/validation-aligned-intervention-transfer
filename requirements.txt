@@ -10,3 +10,5 @@ statsmodels>=0.14
 tabulate>=0.9
 torch>=2.5
 tqdm>=4.66
+threadpoolctl>=3.5
+yfinance>=0.2

@@ -1,0 +1,111 @@
+{
+  "experiment_id": "vait_600_recent_20261117",
+  "policy_root": "artifacts/vait600/Policy-Value",
+  "archive_manifest": "artifacts/vait600/archive_manifest.json",
+  "output_root": "artifacts/vait600/snapshot",
+  "algorithms": [
+    "A2C",
+    "PPO",
+    "DDQN",
+    "SAC"
+  ],
+  "markets": [
+    "AAPL",
+    "AMD",
+    "AMZN",
+    "DJI",
+    "FCHI",
+    "GE",
+    "GOOGL",
+    "HSI",
+    "INTC",
+    "IXIC",
+    "KS11",
+    "MSFT",
+    "N225",
+    "NVDA",
+    "SP500"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "training_end": "2022-12-31",
+  "periods": {
+    "discovery": [
+      "2023-01-01",
+      "2023-12-31"
+    ],
+    "validation": [
+      "2024-01-01",
+      "2024-12-31"
+    ],
+    "test_2025": [
+      "2025-01-01",
+      "2025-12-31"
+    ],
+    "test_2026": [
+      "2026-01-01",
+      "2026-10-31"
+    ]
+  },
+  "concepts": [
+    "trend",
+    "high_volatility",
+    "sideway",
+    "long_action",
+    "short_action",
+    "risk_off"
+  ],
+  "primary_excluded_concepts": [
+    "sideway"
+  ],
+  "threshold_quantile": 0.7,
+  "lookback": 20,
+  "top_candidates": 16,
+  "circuit_sizes": [
+    2,
+    4,
+    8
+  ],
+  "min_relative_gains": [
+    0.0,
+    0.01,
+    0.05
+  ],
+  "near_max_fraction": 0.95,
+  "alignment_methods": [
+    "identity",
+    "hungarian_abs",
+    "hungarian_signed",
+    "procrustes",
+    "cca",
+    "optimal_transport",
+    "weight_matching",
+    "ridge"
+  ],
+  "random_controls": 50,
+  "alignment_null_controls": 50,
+  "alignment_stability_blocks": 4,
+  "bootstrap_repeats": 20000,
+  "random_seed": 20261117,
+  "transaction_costs": [
+    0.0,
+    0.001,
+    0.003,
+    0.005,
+    0.01
+  ],
+  "initial_cash": 500000.0,
+  "evaluation_status": "retrospective historical extension",
+  "device": "cpu",
+  "threads_per_worker": 1
+}

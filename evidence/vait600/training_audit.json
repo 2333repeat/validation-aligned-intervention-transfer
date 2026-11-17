@@ -1,0 +1,54 @@
+{
+  "original": {
+    "schema_version": 1,
+    "status": "passed",
+    "all_checks_passed": true,
+    "created_at_utc": "2026-10-02T23:00:32.550435+00:00",
+    "run_count": 600,
+    "command_count": 600,
+    "market_count": 15,
+    "selection_rule": "single_terminal_candidate",
+    "selected_step": 200000,
+    "protocol": {
+      "train_start": "2012-01-01",
+      "train_end": "2021-12-31",
+      "test_start": "2021-01-01",
+      "test_end": "2021-12-31",
+      "total_env_steps": 200000,
+      "eval_every_steps": 200000,
+      "data_end": "2024-12-31"
+    },
+    "jobs_manifest_sha256": "a37bde57ac148a9d5a5f9315be42c4e6b95acab915c396374953e8610ce6b692",
+    "outputs": {
+      "artifacts": "training_artifact_manifest.csv",
+      "commands": "training_commands.csv",
+      "market_data": "market_data_manifest.csv"
+    }
+  },
+  "updated": {
+    "schema_version": 1,
+    "status": "passed",
+    "all_checks_passed": true,
+    "created_at_utc": "2026-10-02T23:00:48.400853+00:00",
+    "run_count": 600,
+    "command_count": 600,
+    "market_count": 15,
+    "selection_rule": "single_terminal_candidate",
+    "selected_step": 200000,
+    "protocol": {
+      "train_start": "2012-01-01",
+      "train_end": "2022-12-31",
+      "test_start": "2022-01-01",
+      "test_end": "2022-12-31",
+      "total_env_steps": 200000,
+      "eval_every_steps": 200000,
+      "data_end": "2024-12-31"
+    },
+    "jobs_manifest_sha256": "1ebc06dd97d9b2e9e892380f69e407e5286c30d34f28f84f3f6a3d40bac0df46",
+    "outputs": {
+      "artifacts": "training_artifact_manifest.csv",
+      "commands": "training_commands.csv",
+      "market_data": "market_data_manifest.csv"
+    }
+  }
+}

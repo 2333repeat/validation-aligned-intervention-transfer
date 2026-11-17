@@ -1,0 +1,10 @@
+{
+  "estimate": 0.07813982686156494,
+  "ci_low": 0.06800060830909459,
+  "ci_high": 0.08768248293167216,
+  "p_value": 9.99950002499875e-05,
+  "bootstrap_method": "multiway_pigeonhole",
+  "transfer_rows": 6440,
+  "repeats": 20000,
+  "random_state": 1800285755
+}

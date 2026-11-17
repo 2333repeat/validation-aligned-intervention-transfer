@@ -1,0 +1,53 @@
+[
+  {
+    "bootstrap_method": "market_first",
+    "metric": "gain_probability_shift_cosine_to_native",
+    "estimate": 0.08803916298650132,
+    "ci_low": 0.0757070526898278,
+    "ci_high": 0.09981556891357768,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 1595257639,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  },
+  {
+    "bootstrap_method": "dyadic",
+    "metric": "gain_probability_shift_cosine_to_native",
+    "estimate": 0.08803916298650132,
+    "ci_low": 0.06906319728676649,
+    "ci_high": 0.10751666291611194,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 1595257639,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  },
+  {
+    "bootstrap_method": "multiway_pigeonhole",
+    "metric": "gain_probability_shift_cosine_to_native",
+    "estimate": 0.08803916298650132,
+    "ci_low": 0.06487156740431438,
+    "ci_high": 0.11158351967588379,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 1595257639,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  }
+]

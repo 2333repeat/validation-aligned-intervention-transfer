@@ -252,7 +252,8 @@ def _multiway_samples(
     for repeat in range(int(repeats)):
         market_draw = rng.exponential(size=len(markets))
         policy_draw = rng.exponential(size=len(policies))
-        row_weights = policy_draw[source] * policy_draw[target]
+        # 同一训练种子块的自配对只抽样一次；旧版跨策略配对的行为不变。
+        row_weights = np.where(source == target, policy_draw[source], policy_draw[source] * policy_draw[target])
         cell_weight = np.bincount(
             row_cell,
             weights=row_weights,

@@ -1,0 +1,9 @@
+{
+  "tag": "v0.2.0-vait600",
+  "asset_name": "VAIT_600_frozen_artifact_20261117.zip",
+  "bytes": 441891319,
+  "sha256": "82e22c9fa150da0742e089af769a088de3cf5bf064165035d6ff956440c29b6b",
+  "asset_url": "https://github.com/2333repeat/validation-aligned-intervention-transfer/releases/download/v0.2.0-vait600/VAIT_600_frozen_artifact_20261117.zip",
+  "artifact_file_count": 1453,
+  "experiment_id": "vait_600_recent_20261117"
+}

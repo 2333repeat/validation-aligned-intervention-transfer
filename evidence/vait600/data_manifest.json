@@ -1,0 +1,668 @@
+[
+  {
+    "market": "AAPL",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/AAPL.csv",
+    "training_data_sha256": "b6b3b95948dff535f769a021f47ed76e4d94751b156cfcc71fe2171789540493",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.019757196748840494,
+      "trend": 0.08907488747985783
+    },
+    "future_data_sha256": "202c11a8217b4d42de0ab305e8267c1d22cc5e9f0f3786d29f2f4259cfd79b80",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/AAPL/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:42.785917+08:00",
+      "copy_time": "2026-11-16T18:01:12.961696+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "6dc702448c4f3827766ce6f506e1d0258a140d1572a22d881b1c061e3c9cb0a3"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "fa44d16d1e6b10ab465ab8c2d716349e5bc9cad9b06fc814c880b039055ea862"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "90e2e745567f99a9f6c68d6619180b97a8f4b3f72f8b436866c3f59f506ef853"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "167b1cdd8331bda0a12e38ac84c1460ef14566b28704f81762f895e14dcabcce"
+      }
+    }
+  },
+  {
+    "market": "AMD",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/AMD.csv",
+    "training_data_sha256": "e22495084c2e561435df4f37708f97159638ad3ede679f997c1851cdf1dfd21c",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.038091237470405936,
+      "trend": 0.16051425210844866
+    },
+    "future_data_sha256": "acfe282ad752f72156e0167cbd72593eb664f43fec05f66fe5ef74838ffdec39",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/AMD/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:43.673727+08:00",
+      "copy_time": "2026-11-16T18:01:14.909795+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "4977dd68aaec411c6fb56bfff3b264019321208e101ac0283af475aef7204b38"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "01c2031130fc0e91e48845deacf121730f21b7f87ff7ed49fcd4ac2bfbbeab57"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "c0da471be06851a8335a779f6abd98adba67b63d9a13ae014015b8935a97cf68"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "d9625885f73845446d36cf8209fc83d3c85e22cb1ad936a5d15685c99668e381"
+      }
+    }
+  },
+  {
+    "market": "AMZN",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/AMZN.csv",
+    "training_data_sha256": "2b897c4e24732cf7bb6e881811edabd0d98356e204ea18a23593da98c1e33753",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.024138147088135557,
+      "trend": 0.09177220650720871
+    },
+    "future_data_sha256": "227e14e4d02ae271e2456fdf20a1aabdf327a4c3441e44750500fc0881486d3f",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/AMZN/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:44.530830+08:00",
+      "copy_time": "2026-11-16T18:01:17.104642+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "26929c17946f1a6230b1acb49e72d244355291ec857de8bf63de9b046b6ef588"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "ee0935875fcfb004253821c59e31870663d08eeff05edc8e3331875e764337f1"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "894bbd4413a751e64fb4f44133ab8df475789689a4e0601942b610af4876c04d"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "c6362a4ae6dba6dc040127e7fcc90443f12f741298f2b10c215172539ff2340a"
+      }
+    }
+  },
+  {
+    "market": "DJI",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/DJI.csv",
+    "training_data_sha256": "0a0dbd7b91b8d8948b56a8f9565b47fc0895720d04904247d8e0b2d74d224899",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.010739279635846345,
+      "trend": 0.039561312387440206
+    },
+    "future_data_sha256": "0ebe75aae5f57daceb752415e42eef83c9f7c1a6b057a12e9e8cbe7edf4a4cb4",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^DJI",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:21.690188+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "f13adf02ac1e3548c5733b99e72f6be90d36684e72763bdfddfbbbda06496e7c"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "1d82be8c477b91c328ddd4fa175c530c0adad47180ad6447f4ccd327c85ffd6a"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "48b4b40ada326838d576ed556c7ff6c4a32a8ba2bc1748f8c961299353c60645"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "1795a65c64afe4bce80675e6769b40d810a9d75dd511ca3651a63b9ec949e853"
+      }
+    }
+  },
+  {
+    "market": "FCHI",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/FCHI.csv",
+    "training_data_sha256": "9e3b04127960f19d414c57db7b78ba91dade7a20b26562fc0616d3ed52ea1134",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.013266281787911343,
+      "trend": 0.047938749548892275
+    },
+    "future_data_sha256": "196dae64e51bd5819b4188e2ea9c6d87ab3024e7fb072ae441a4e239f5be1e82",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/FCHI/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:45.474300+08:00",
+      "copy_time": "2026-11-16T18:01:23.865292+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 239,
+        "first_date": "2023-01-02",
+        "last_date": "2023-12-29",
+        "sha256": "4d7454722d79b0df082a2c70736ca5764d6f81cf6771963fb58395cedd4ef9ea"
+      },
+      "validation": {
+        "rows": 251,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "ce94ee1494c3ea105ce4b1d7ad935531cb1759dc177fc9fa64539d6ccd993b5a"
+      },
+      "test_2025": {
+        "rows": 255,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "2a08b2b4a67cc8ed147a6d641cfbc0b1daaf14771aa60551ddb356ae3fc836a0"
+      },
+      "test_2026": {
+        "rows": 213,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "e0dcf2fe32a12dc0522827ca4943f8ef176e71d0a9d6affa61aa8bec98b55931"
+      }
+    }
+  },
+  {
+    "market": "GE",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/GE.csv",
+    "training_data_sha256": "f6de079457821adca918a7308f38ff5fbf043f232a6fb8006a45ed3f09729096",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.020621299816428056,
+      "trend": 0.07649297229288678
+    },
+    "future_data_sha256": "c2f3437e210f12c50b702fe0ef593cf8f47f9d2153363b5bd594897ad9b99a24",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/GE/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:46.516670+08:00",
+      "copy_time": "2026-11-16T18:01:25.883220+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "e53510300d157537d40f9fd3a1655f0dc5783deddf4351895d4b4817aff08a7e"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "65703757e2e1884d3c1058281001d7e6eb67e1a97d915806ed999a2371ed8d68"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "c8b8ac488083258e8003890226865361225193c9ac2defbe050ae4ff3d8e0a1d"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "8f7162bdfaa980fb1728f0a4812e2d0cfcf7f3515ec92ee4c55df4b7e4fbd5da"
+      }
+    }
+  },
+  {
+    "market": "GOOGL",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/GOOGL.csv",
+    "training_data_sha256": "b6e00f12bc8af41fdab5173310b99a56491ffe1b2c7363e1091ccea3f2ea0880",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.01779559871928431,
+      "trend": 0.07007517472337353
+    },
+    "future_data_sha256": "da3e7fcda638cdad22f75b7f43dd62d3562c21d50c918b94456ab443ef8661b8",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/GOOGL/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:48.163596+08:00",
+      "copy_time": "2026-11-16T18:01:27.963675+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "bd3bb41597cc6731ba2ddceece81e9f1677dd3e516bf84bce42e344b4eb4003d"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "2675902013f20f0ec3d579ac884f2da3ac945f1fc24c65e6a73f4dd597705f8a"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "012a36e60333c907065b8b58cd50a7bf4b77c1d2f7426800aa82d201201ca366"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "427f168493be0a0f6e05d1a9ed748126a481a294abd1d74285d987fc56fcdd8a"
+      }
+    }
+  },
+  {
+    "market": "HSI",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/HSI.csv",
+    "training_data_sha256": "56ad9bd6ecba76f4016d9ad654efb05269d673d88f8b6eb85e540e011c11bfee",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.014068588723802978,
+      "trend": 0.056726133826418806
+    },
+    "future_data_sha256": "733888e4c8790fa32609048553b1b4db42e2d30266d1d9e8bf40931ee773e2c8",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^HSI",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:30.157729+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 243,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "33cf481cb723b11a7687e4c1b9b29041b526b3a2c83c2ad19d7cda5710f93c09"
+      },
+      "validation": {
+        "rows": 246,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "9edd11072593bf85ed3927fdb772ff11fb6b6f03121676484caf89809de0ec9d"
+      },
+      "test_2025": {
+        "rows": 246,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "ef20fd2db19991d2684d8ec59feb610e81deffd6bed3fd00d4b6595dfe5595f0"
+      },
+      "test_2026": {
+        "rows": 204,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "b7e999d6066c7b2fd4b66c58375caf2d55d7bef1f7a990b2169f2f6995e6ebb2"
+      }
+    }
+  },
+  {
+    "market": "INTC",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/INTC.csv",
+    "training_data_sha256": "cb939160c2baf05911bdc498ef1c291bde11c2e6de3587b684d55a17d2254df5",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.01936294576382897,
+      "trend": 0.07309485657809497
+    },
+    "future_data_sha256": "a7f77537c90ad79cf80fb0d2067a94862fc512ee923c28f1f440991cbfcd7026",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/INTC/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:49.709120+08:00",
+      "copy_time": "2026-11-16T18:01:32.088787+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "b703c2acfbf26684732c7c395bc50e5c5df5a5ae3441faab199ec88527697930"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "193b2ac3d7e8c833124b087b1dc3ee6549c72843e5e7fce9ce163ced0ab48610"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "8958fc7ea1a601dc44580e4b1bdbcb0a1fe7869c5448e44e2d39081d430ef525"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "c67f4d5d3a442f0a674d525e653879631ff654a49bdd95ef71ec519966b9acf3"
+      }
+    }
+  },
+  {
+    "market": "IXIC",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/IXIC.csv",
+    "training_data_sha256": "a9ea6e04f6846ae0cb9533f851898ac13a20369457a709ec986618a8b053ba06",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.013402409760595103,
+      "trend": 0.04983439266054556
+    },
+    "future_data_sha256": "e0684746da56a5465b1d5aeea432118242e7a349fdaf41d6a1c79d27cad9397b",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^IXIC",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:34.231438+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "60f8e7f56154b3760a664739ea6e55768565ccdb41b799b7152366113b112399"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "956657144f1d1b5a716d2fcc859e653867cf928a1adf1da8264e9d583c0d6098"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "c62db03f3dba5ebe1d972e90041721c75e3e2deae1917e22f5d671717746249c"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "b6392ce73f82cf733fbba3014ed836a6cc64618002302c65b6c21954d3fb915e"
+      }
+    }
+  },
+  {
+    "market": "KS11",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/KS11.csv",
+    "training_data_sha256": "f978d12ee13683cf000c559aa00d9bbfd45b4affd43aec7f80d6a955496fc33b",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.011264809795060803,
+      "trend": 0.045392066716907896
+    },
+    "future_data_sha256": "b389d9f583ed742e780a874e8ba1cec98139b21fd8e6a1e427668bbe6a1e37ac",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^KS11",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:36.545985+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 245,
+        "first_date": "2023-01-02",
+        "last_date": "2023-12-28",
+        "sha256": "04e5d96167c1f25ba1a723165f9ed9ac0a93dbf1cd12607289560b54a6c488b1"
+      },
+      "validation": {
+        "rows": 243,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-30",
+        "sha256": "69a4a7ca5f4aa86490e78011545fd5816a12a6970583a236bc510159d5ed0bb9"
+      },
+      "test_2025": {
+        "rows": 242,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-30",
+        "sha256": "9d47a9141cdb2dbd7861de8adc284ac365b7d27efe123b1f4107141ab0bbf5ca"
+      },
+      "test_2026": {
+        "rows": 201,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "f461963ff0c12352abf3e70625cbea5ec33acedf82a068ff769e081b5d5ec173"
+      }
+    }
+  },
+  {
+    "market": "MSFT",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/MSFT.csv",
+    "training_data_sha256": "d160a6f67180918fa39694409e380b965e9c76d74aa8940ed3ca88061caefd9a",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.01681796651602489,
+      "trend": 0.06110962024009983
+    },
+    "future_data_sha256": "8ee46c3e400213dc0879c69ff33e868abfc158f5431229ab08e475685248ab0d",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/MSFT/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:51.432036+08:00",
+      "copy_time": "2026-11-16T18:01:38.620887+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "5409542e70813387fe3a0feb98a604f099b0d34fde29ad06840dcac60c6c6450"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "9f79773e71350a29e8c6bbdb40ab9690661b9b0dfd70b2ac5b333adba14d952b"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "bbedaef7f0d2192d329ad8061a740cb0a76f93b5d1ac0df34bf9804e5661d49e"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "818924de330196340da017a1efea7b5fdb3b0ed546601d6547621cdf7d26ba8a"
+      }
+    }
+  },
+  {
+    "market": "N225",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/N225.csv",
+    "training_data_sha256": "6bb5cf9f36ae0a3ea107e618bbf8eaf4cc50124a26023dd9ff7c08a0cf389bd1",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.013964844937681716,
+      "trend": 0.05554649339753196
+    },
+    "future_data_sha256": "a3172369f634650f4731323a4910f00ab750bf4dcd3c6fb059e38be04c4b09f9",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^N225",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:41.144987+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 246,
+        "first_date": "2023-01-04",
+        "last_date": "2023-12-29",
+        "sha256": "5c066ce09d014a7b4e16f81743243ebbd709c440e58718f8205c561dfd4ba42b"
+      },
+      "validation": {
+        "rows": 245,
+        "first_date": "2024-01-04",
+        "last_date": "2024-12-30",
+        "sha256": "903224b07fa55dce11347e74dc5b506d127df01932cddcfff0deed4a636e27b4"
+      },
+      "test_2025": {
+        "rows": 243,
+        "first_date": "2025-01-06",
+        "last_date": "2025-12-30",
+        "sha256": "75e5f26f900b475715fe15ea956b98d1184b967ace4a99c723c0c9e0804820e8"
+      },
+      "test_2026": {
+        "rows": 201,
+        "first_date": "2026-01-05",
+        "last_date": "2026-10-30",
+        "sha256": "f1bb98caef2ab97f7054f5c78a3129883e573b0ec64e00102c8c97cb5c937633"
+      }
+    }
+  },
+  {
+    "market": "NVDA",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/NVDA.csv",
+    "training_data_sha256": "9c03402f1b3499de5436cfffd4ceacff2639c775a991c1932fbb347be80b1b95",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.03132376285008187,
+      "trend": 0.1234092633668279
+    },
+    "future_data_sha256": "b7d228edfdff7c7a1b27ac580276e866b22e2ee858d0280fde7c9b8b89e33e4c",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "auto_adjust": false,
+      "reused_source": "archived-yahoo-snapshot:refit_wsp_2026-11-16/NVDA/future_ohlcv.csv",
+      "source_frozen_at": "2026-11-16T16:55:52.965555+08:00",
+      "copy_time": "2026-11-16T18:01:43.311550+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 250,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "ef9e6f86da8138d7605c4db85ca6b87b6e3d3134d09a40e427743eabef16b2c3"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "5b34828a59e4329e6e31b2981f632b85d23f290df068ccb4960a520a257b1cb6"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "54ef0533b01cae5c9ab0afbe743be077abdc085abed74472f04297243c12f302"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "d47b4394332879ef84b86bf2727978337dc636a3ed5b622504c111a25af4a2d9"
+      }
+    }
+  },
+  {
+    "market": "SP500",
+    "training_data_path": "artifacts/vait600/Policy-Value/Data/SP500.csv",
+    "training_data_sha256": "f023a3745b55f20d137d61c460a28e74de9466645b750512e75d822839bba9f9",
+    "threshold_training_end": "2022-12-31",
+    "thresholds": {
+      "volatility": 0.01153717535341436,
+      "trend": 0.04016536658080816
+    },
+    "future_data_sha256": "42dd7bd36db3f5dda780042f75b07bf19e1507575e3b77af862a5d596c67a6d8",
+    "source": {
+      "provider": "Yahoo Finance via yfinance",
+      "symbol": "^GSPC",
+      "auto_adjust": false,
+      "download_start": "2024-10-01",
+      "download_end_exclusive": "2026-11-01",
+      "access_time": "2026-11-16T18:01:45.567619+00:00"
+    },
+    "periods": {
+      "discovery": {
+        "rows": 249,
+        "first_date": "2023-01-03",
+        "last_date": "2023-12-29",
+        "sha256": "7f01a2eed2f62c7aeb3542c2f88e032af79db11e8aeb95d94a6a11715a7f95f3"
+      },
+      "validation": {
+        "rows": 252,
+        "first_date": "2024-01-02",
+        "last_date": "2024-12-31",
+        "sha256": "12d00e92245efad049be5bfaadda541c3d468b0c88adfaf4034d226666f7db56"
+      },
+      "test_2025": {
+        "rows": 250,
+        "first_date": "2025-01-02",
+        "last_date": "2025-12-31",
+        "sha256": "d3de61cd3c4fb8d672079213625499e08bbd0576ef36382f3506320630f18dc9"
+      },
+      "test_2026": {
+        "rows": 209,
+        "first_date": "2026-01-02",
+        "last_date": "2026-10-30",
+        "sha256": "cf3abbcd06cad187c8d52c2b7ab5023a9b3bba51b7339aee41241ff55cb6d370"
+      }
+    }
+  }
+]

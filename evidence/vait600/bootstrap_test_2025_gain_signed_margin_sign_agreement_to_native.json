@@ -1,0 +1,53 @@
+[
+  {
+    "bootstrap_method": "market_first",
+    "metric": "gain_signed_margin_sign_agreement_to_native",
+    "estimate": 0.03286810629244635,
+    "ci_low": 0.02665038145365293,
+    "ci_high": 0.04002046165326678,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 4049023180,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  },
+  {
+    "bootstrap_method": "dyadic",
+    "metric": "gain_signed_margin_sign_agreement_to_native",
+    "estimate": 0.03286810629244635,
+    "ci_low": 0.023709465213628135,
+    "ci_high": 0.04291004966667098,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 4049023180,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  },
+  {
+    "bootstrap_method": "multiway_pigeonhole",
+    "metric": "gain_signed_margin_sign_agreement_to_native",
+    "estimate": 0.03286810629244635,
+    "ci_low": 0.021784132554400166,
+    "ci_high": 0.04513284746747283,
+    "p_value": 9.99950002499875e-05,
+    "repeats": 20000,
+    "random_state": 4049023180,
+    "markets": 15,
+    "algorithms": 4,
+    "concepts": 5,
+    "policies": 600,
+    "dyads": 11380,
+    "transfer_rows": 22760,
+    "excluded_concepts": ""
+  }
+]
