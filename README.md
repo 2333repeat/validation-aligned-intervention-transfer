@@ -28,7 +28,7 @@ python tools/fetch_vait_artifact.py
 python tools/replay_vait_recent_snapshot.py --verify-only
 ```
 
-The download script retrieves the versioned [600-policy artifact](https://github.com/2333repeat/validation-aligned-intervention-transfer/releases/tag/v0.2.0-vait600), verifies its SHA-256 against [release.json](evidence/vait600/release.json), and extracts it to `artifacts/vait600/`. It includes the 600 checkpoints, their policy implementation, fixed inputs, discovery/selection/mapping records, row-level results, and aggregate tables. Per-file checksums are in `MANIFEST.json` inside the artifact.
+The download script retrieves and joins the versioned [600-policy artifact] parts(https://github.com/2333repeat/validation-aligned-intervention-transfer/releases/tag/v0.2.0-vait600), verifies its SHA-256 against [release.json](evidence/vait600/release.json), and extracts it to `artifacts/vait600/`. It includes the 600 checkpoints, their policy implementation, fixed inputs, discovery/selection/mapping records, row-level results, and aggregate tables. Per-file checksums are in `MANIFEST.json` inside the artifact.
 
 An existing `artifacts/vait600/` is preserved. To use an artifact stored elsewhere, pass `--artifact-root /path/to/vait600` to the replay script.
 

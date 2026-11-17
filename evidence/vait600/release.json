@@ -3,7 +3,143 @@
   "asset_name": "VAIT_600_frozen_artifact_20261117.zip",
   "bytes": 441891319,
   "sha256": "82e22c9fa150da0742e089af769a088de3cf5bf064165035d6ff956440c29b6b",
-  "asset_url": "https://github.com/2333repeat/validation-aligned-intervention-transfer/releases/download/v0.2.0-vait600/VAIT_600_frozen_artifact_20261117.zip",
   "artifact_file_count": 1453,
-  "experiment_id": "vait_600_recent_20261117"
+  "experiment_id": "vait_600_recent_20261117",
+  "parts": [
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part001",
+      "bytes": 16777216,
+      "sha256": "f0b3f5f7c4c8b66c04240b7d0aa43996dc15c6bc41b1c986c809a36508b85bce"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part002",
+      "bytes": 16777216,
+      "sha256": "b7a49be657fad7ff76fa6515da78b78f533dc2e5e584cfd70f90ed13f8209389"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part003",
+      "bytes": 16777216,
+      "sha256": "21a37d34748ef6682fa9eeb1e474e84b3fe442fabb0e60b4ffa2da2fafe44967"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part004",
+      "bytes": 16777216,
+      "sha256": "d2b1a089abc58629386c74bf30ab3c2493fb61c7504ed9a5ec4417e20ee643b7"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part005",
+      "bytes": 16777216,
+      "sha256": "b281230312a4fc5306814684e1520e89ae255d0fd26c9fab1d67216b68d0e8d0"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part006",
+      "bytes": 16777216,
+      "sha256": "69b1634fd53a3b728555cd238ae379f06f5d31f349af6be453c7f27457461080"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part007",
+      "bytes": 16777216,
+      "sha256": "03b5b12ded10322600a5bafc6e2bd494d904f9bc543e1d60bb757786327457a0"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part008",
+      "bytes": 16777216,
+      "sha256": "a4a7384f6d4f4981713f2804e5e9e57ba7028371ffd48857dc5597f80989aac7"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part009",
+      "bytes": 16777216,
+      "sha256": "a4eea5e7fbf6718f5902d3fc92a13c0e7f20970ea9d457ef720453697d078282"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part010",
+      "bytes": 16777216,
+      "sha256": "43a5bc099fc406c7ccec571375a262bfb57c02c0ee8eb8cb345a774655d96ac3"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part011",
+      "bytes": 16777216,
+      "sha256": "c759d38ef9298bf78f04f527a166a8aeec11bbca36ea056b017a0ebad97f7303"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part012",
+      "bytes": 16777216,
+      "sha256": "b2940a30c51e3753cd40cd5eef3a2a9b57c48a270ffb31f7474b2f260fc9549f"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part013",
+      "bytes": 16777216,
+      "sha256": "644486b9fbdbb4f6c591b93239a730c566bd842471f5951ead7fba3942d17132"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part014",
+      "bytes": 16777216,
+      "sha256": "e41b0e1cfb6c65d742a93b9347ca350cdf295853abeaf4ab82f6564ac306cdc0"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part015",
+      "bytes": 16777216,
+      "sha256": "8078c7db58b917e1fe72ce8d6ea31d56251f2cb4405b7a804a283f88ff718b4d"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part016",
+      "bytes": 16777216,
+      "sha256": "a076cd0e610c4c6d303b3457127c7f92ad82a262e9e293b9128873e8b2346723"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part017",
+      "bytes": 16777216,
+      "sha256": "8001029d5a00422b303bc18818710d8952ede90f9019017d01bdabefe579aed4"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part018",
+      "bytes": 16777216,
+      "sha256": "1c27315bc5016542563f695b0a90557dcf39261b7c39759b85412acf16efacbe"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part019",
+      "bytes": 16777216,
+      "sha256": "bac227fd3c8b750590528eaa7695b4ae5d6ad5273d69c3cb75f6b30bcf2339f5"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part020",
+      "bytes": 16777216,
+      "sha256": "88ff62f8fcdad07e1dd94a696caa690359ab50876246e77b1efab9b8d41a7b6a"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part021",
+      "bytes": 16777216,
+      "sha256": "dd8ecdca9fc8c5be7ad80c9e0a5c18d0d22ea0f9a0a7d8c9747e78d6fab389d2"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part022",
+      "bytes": 16777216,
+      "sha256": "c6a09528312786def6b44d5678b2c48dc1f7e3cf85a008850eade1569a9cd641"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part023",
+      "bytes": 16777216,
+      "sha256": "894728cb917f201ca598930121d0c6ec9d6f272c671b24438ae98e2668831cdf"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part024",
+      "bytes": 16777216,
+      "sha256": "3d7965432062b171338b2ebedca1e452c649bea61a4b6404faa04135c7eddc85"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part025",
+      "bytes": 16777216,
+      "sha256": "20c915e70b4eec5b3c1d1e0e5a202a8b60fc16f50c2ccd3d5cf27520fd245892"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part026",
+      "bytes": 16777216,
+      "sha256": "ec338e08e556524cd880f305e92eb632cb725712012fd621aab5c373272b4ec4"
+    },
+    {
+      "name": "VAIT_600_frozen_artifact_20261117.zip.part027",
+      "bytes": 5683703,
+      "sha256": "cb53fe9a1bdba87a51c1fc645995a3b8e9e116d3a047a63f7aa4ae31a26665fc"
+    }
+  ]
 }
